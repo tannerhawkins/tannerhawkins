@@ -12,4 +12,8 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: graph
           token: ${{ secrets.METRICS_TOKEN }}
