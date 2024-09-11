@@ -16,5 +16,7 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: yes
           plugin_habits_charts_type: graph
+          plugin_habits_from: 1000
+          plugin_habits_languages_threshold: 5%
           config_timezone: America/New_York
           token: ${{ secrets.METRICS_TOKEN }}
