@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: tannerhawkins/metrics@latest
+      - uses: lowlighter/metrics@tannerhawkins
         with:
           plugin_habits: yes
           plugin_habits_facts: yes
