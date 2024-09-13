@@ -393,22 +393,22 @@
                         <div class="chart-bars horizontal">
                             <div class="entry">
                                 <span class="name">Go</span>
-                                <div class="bar" style="width: 41.67934845613704%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
-                                <span class="value">52%</span>
+                                <div class="bar" style="width: 40.46633354403768%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                                <span class="value">51%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">HCL</span>
-                                <div class="bar" style="width: 1.551891325569326%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <div class="bar" style="width: 1.638757397295929%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">2%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">Gherkin</span>
-                                <div class="bar" style="width: 0.005308908022626783%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <div class="bar" style="width: 0.005606070573563944%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">0%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">Shell</span>
-                                <div class="bar" style="width: 0.0008884295058273393%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <div class="bar" style="width: 0.0009381587490453949%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">0%</span>
                             </div>
                         </div>
@@ -417,7 +417,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 13 Sept 2024, 17:20:59 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 13 Sept 2024, 17:32:01 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
