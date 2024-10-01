@@ -393,17 +393,17 @@
                         <div class="chart-bars horizontal">
                             <div class="entry">
                                 <span class="name">Go</span>
-                                <div class="bar" style="width: 47.08878520912614%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
+                                <div class="bar" style="width: 46.92073448333715%; background-color: var(--color-calendar-graph-day-L3-bg)"></div>
                                 <span class="value">59%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">Gherkin</span>
-                                <div class="bar" style="width: 0.04095423030808529%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <div class="bar" style="width: 0.04118291957249377%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">0%</span>
                             </div>
                             <div class="entry">
                                 <span class="name">Makefile</span>
-                                <div class="bar" style="width: 0.011598811447635929%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
+                                <div class="bar" style="width: 0.01166357944932998%; background-color: var(--color-calendar-graph-day-L1-bg)"></div>
                                 <span class="value">0%</span>
                             </div>
                         </div>
@@ -412,7 +412,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 1 Oct 2024, 17:46:54 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 1 Oct 2024, 18:02:18 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
