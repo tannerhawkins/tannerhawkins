@@ -29,6 +29,7 @@ jobs:
           plugin_music_time_range: medium
           plugin_music_top_type: artists
           plugin_music_user: tannerhawkins2703
+          plugin_music_token: ${{ secrets.SPOTIFY_TOKEN }}
           plugin_steam: yes
           plugin_steam_achievements_limit: 2
           plugin_steam_games_limit: 2
@@ -36,3 +37,4 @@ jobs:
           plugin_steam_recent_games_limit: 2
           plugin_steam_sections: player, most-played, recently-played
           plugin_steam_user: 76561198101442019
+          plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
