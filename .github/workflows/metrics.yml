@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
+          plugin_steam: yes
+          plugin_steam_token: ${{ secrets.STEAM_TOKEN }}
+          plugin_steam_games_limit: 3
+          plugin_steam_recent_games_limit: 2
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: yes
