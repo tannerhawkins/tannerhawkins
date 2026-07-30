@@ -14,7 +14,7 @@ jobs:
       - name: Prepare forked metrics image
         run: |
           set -euo pipefail
-          FORK_REF=12681f0d9568dc58e321c184c040d673a5760d2c
+          FORK_REF=a1f041295463bbc36921c97a635786b490c9b62a
           FORK_IMAGE=ghcr.io/tannerhawkins/metrics:${FORK_REF}
           LOCAL_IMAGE=metrics:forked-3.35.0-beta
 
@@ -43,7 +43,7 @@ jobs:
           docker image inspect metrics:forked-3.35.0-beta --format 'Image ID={{.Id}}'
           docker image inspect metrics:forked-3.35.0-beta --format 'RepoTags={{json .RepoTags}}'
           docker image inspect metrics:forked-3.35.0-beta --format 'RepoDigests={{json .RepoDigests}}'
-      - uses: tannerhawkins/metrics@12681f0d9568dc58e321c184c040d673a5760d2c
+      - uses: tannerhawkins/metrics@a1f041295463bbc36921c97a635786b490c9b62a
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
