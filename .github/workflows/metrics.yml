@@ -11,10 +11,38 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Pre-pull metrics image for forked action
+      - name: Prepare forked metrics image
         run: |
-          docker pull ghcr.io/lowlighter/metrics:v3.35-beta
-          docker tag ghcr.io/lowlighter/metrics:v3.35-beta metrics:forked-3.35.0-beta
+          set -euo pipefail
+          FORK_REF=12681f0d9568dc58e321c184c040d673a5760d2c
+          FORK_IMAGE=ghcr.io/tannerhawkins/metrics:${FORK_REF}
+          LOCAL_IMAGE=metrics:forked-3.35.0-beta
+
+          echo "Attempting to pull fork image: ${FORK_IMAGE}"
+          if docker pull "${FORK_IMAGE}"; then
+            docker tag "${FORK_IMAGE}" "${LOCAL_IMAGE}"
+            SOURCE_MODE=pulled
+            SOURCE_REF="${FORK_IMAGE}"
+          else
+            echo "Fork image pull unavailable, building from fork ref ${FORK_REF}"
+            docker build --tag "${LOCAL_IMAGE}" "https://github.com/tannerhawkins/metrics.git#${FORK_REF}"
+            SOURCE_MODE=built
+            SOURCE_REF="https://github.com/tannerhawkins/metrics.git#${FORK_REF}"
+          fi
+
+          echo "METRICS_FORK_REF=${FORK_REF}" >> "${GITHUB_ENV}"
+          echo "METRICS_FORK_IMAGE_SOURCE_MODE=${SOURCE_MODE}" >> "${GITHUB_ENV}"
+          echo "METRICS_FORK_IMAGE_SOURCE_REF=${SOURCE_REF}" >> "${GITHUB_ENV}"
+      - name: Verify forked metrics image
+        run: |
+          set -euo pipefail
+          echo "Fork commit: ${METRICS_FORK_REF}"
+          echo "Image source mode: ${METRICS_FORK_IMAGE_SOURCE_MODE}"
+          echo "Image source ref: ${METRICS_FORK_IMAGE_SOURCE_REF}"
+          echo "Local image tag: metrics:forked-3.35.0-beta"
+          docker image inspect metrics:forked-3.35.0-beta --format 'Image ID={{.Id}}'
+          docker image inspect metrics:forked-3.35.0-beta --format 'RepoTags={{json .RepoTags}}'
+          docker image inspect metrics:forked-3.35.0-beta --format 'RepoDigests={{json .RepoDigests}}'
       - uses: tannerhawkins/metrics@12681f0d9568dc58e321c184c040d673a5760d2c
         with:
           token: ${{ secrets.METRICS_TOKEN }}
