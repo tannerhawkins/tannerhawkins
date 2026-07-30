@@ -11,7 +11,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: tannerhawkins/metrics@master
+      - name: Pre-pull metrics image for forked action
+        run: |
+          docker pull ghcr.io/lowlighter/metrics:v3.35-beta
+          docker tag ghcr.io/lowlighter/metrics:v3.35-beta metrics:forked-3.35.0-beta
+      - uses: tannerhawkins/metrics@12681f0d9568dc58e321c184c040d673a5760d2c
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
